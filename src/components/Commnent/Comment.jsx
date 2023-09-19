@@ -6,14 +6,14 @@ import { User, ReplyButton, Replies } from "./components/"
 
 function Score({ score, layout }) {
   return(
-    <Container styles={`${layout} bg-gray-100 rounded-xl overflow-hidden`}>
-      <button className="block w-12 h-12 text-center leading-10">
+    <Container styles={`${layout} bg-gray-100 rounded-xl text-moderate-blue overflow-hidden`}>
+      <button className="block w-12 h-12 opacity-50 text-center leading-10">
         +
       </button>
-      <span className="w-10 h-10 text-center leading-10">
+      <span className="w-10 h-10 font-semibold text-center leading-10">
         {score}
       </span>
-      <button className="block w-12 h-12 text-center leading-10">
+      <button className="block w-12 h-12 opacity-50 text-center leading-10">
         -
       </button>
     </Container>
@@ -22,7 +22,7 @@ function Score({ score, layout }) {
 
 export default function Comment({ comment }) {
   return(
-    <Container styles="w-full max-w-3xl pt-4 first:pt-0 mx-auto">
+    <Container styles="w-full pt-4 first:pt-0">
       <Container styles="p-4 bg-white rounded-lg">
         <Container styles="flex items-center">
           <User user={comment.user} />
@@ -30,7 +30,7 @@ export default function Comment({ comment }) {
             {comment.createdAt}
           </span>
         </Container>
-        <p className="pt-4 leading-8">
+        <p className="pt-4 text-dark-blue leading-8">
           {comment.content}
         </p>
         <Container styles="flex items-center justify-between pt-4">
