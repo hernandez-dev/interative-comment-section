@@ -1,1 +1,1 @@
-export { default } from "./Comment.jsx"
+export { default as Comment } from "./Comment.jsx"
