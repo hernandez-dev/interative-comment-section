@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 
 // components
 import Container from "./components/Container.jsx"
+import Comment from "./components/Commnent/"
 
 function App() {
   // state
@@ -12,9 +13,8 @@ function App() {
     async function fetchComments() {
       try {
         const response = await fetch("/data.json")
-        const commets = await response.json()
-        console.log(commets)
-        setComments(commets)
+        const { currentUser, comments } = await response.json()
+        setComments(comments)
       } catch (e) {
         console.log(e)
       }
@@ -23,9 +23,9 @@ function App() {
   }, [])
 
   return (
-    <>
-      app init
-    </>
+    <Container styles="p-4">
+      {comments.map(comment => <Comment key={comment.id} comment={comment} type="comment" />)}
+    </Container>
   )
 }
 
