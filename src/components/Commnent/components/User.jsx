@@ -8,7 +8,7 @@ export default function User({ user }) {
         <img src={user.image.webp} className="block w-full" alt={user.username} />
       </Container>
       <Container styles="">
-        <h2 className="pl-6 font-semibold">
+        <h2 className="pl-6 font-semibold text-base text-dark-blue">
           {user.username}
         </h2>
       </Container>
